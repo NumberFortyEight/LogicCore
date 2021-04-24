@@ -38,8 +38,8 @@ public class User implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        User otherUser = (User) o;
-        return -this.score - otherUser.score;
+    public int compareTo(Object otherUser) {
+        User user = (User) otherUser;
+        return -(this.score - user.score);
     }
 }

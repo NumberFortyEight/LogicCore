@@ -10,8 +10,12 @@ public class InputValuesRepositoryImpl implements InputValuesRepository {
     public List<InputValue> getInputValuesList() {
         return List.of(
                 new InputValue("Александр", "топот"),
-                new InputValue("Иван", "А рорза упала на лапу азора"),
+                new InputValue("Иван", "А роза упала на лапу азора"),
                 new InputValue("Дмитрий", "Потоп"),
-                new InputValue("Хек", "розы"));
+                new InputValue("Хек", "А леди у ног его - ну и дела"),
+                new InputValue("Хек", "Цени в себе свинец"),
+                new InputValue("Иван", "А леди у ног его - ну и дела"),
+                new InputValue("Дмитрий", "Неуч учуен"),
+                new InputValue("Дмитрий", "Лев осовел"));
     }
 }
