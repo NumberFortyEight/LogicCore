@@ -11,8 +11,7 @@ public class PalindromeTester {
     public static boolean isPalindrome(String string){
         String normalizedString = getNormalizedString(string);
         String reversedNormalized = new StringBuilder(normalizedString).reverse().toString();
-        LOGGER.info(String.format("comparison of words {%s} and {%s} ", normalizedString, reversedNormalized));
-        LOGGER.info(String.format("output {%b}", normalizedString.equals(reversedNormalized)));
+        LOGGER.info(String.format("comparison of words {%s} and {%s} result {%b}", normalizedString, reversedNormalized, normalizedString.equals(reversedNormalized)));
         return normalizedString.equals(reversedNormalized);
     }
     public static String getNormalizedString(String string){

@@ -10,18 +10,16 @@ public class ScoreManagerImpl implements ScoreManager {
     private static final Hashtable<String, List<User>> palindromeAndUsers = new Hashtable<>();
 
     @Override
-    public void scorePoints(Optional<User> optionalUser, String normalizedString) {
-        optionalUser.ifPresent(user -> {
-            if (palindromeAndUsers.containsKey(normalizedString)) {
-                CheckAndUpdateUsingList(user, normalizedString);
-            } else {
-                user.sumScore(normalizedString.length());
-                palindromeAndUsers.put(normalizedString, new ArrayList<>(List.of(user)));
-            }
-        });
+    public void scorePoints(User user, String normalizedString) {
+        if (palindromeAndUsers.containsKey(normalizedString)) {
+            CheckAndUpdateUsingList(user, normalizedString);
+        } else {
+            user.sumScore(normalizedString.length());
+            palindromeAndUsers.put(normalizedString, new ArrayList<>(List.of(user)));
+        }
     }
 
-    public void CheckAndUpdateUsingList(User user, String normalizedString){
+    public void CheckAndUpdateUsingList(User user, String normalizedString) {
         List<User> users = palindromeAndUsers.get(normalizedString);
 
         boolean isUserUsePalindrome = users
@@ -32,11 +30,4 @@ public class ScoreManagerImpl implements ScoreManager {
             users.add(user);
         }
     }
-
-    // TODO: 24.04.2021
-    public Hashtable<String, List<User>> getPalindromeAndUsers() {
-        return palindromeAndUsers;
-    }
-
-
 }
